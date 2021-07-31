@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 
 public class LogInGUI extends JFrame {
 
@@ -36,29 +38,34 @@ public class LogInGUI extends JFrame {
 		//Tao button LogIn
 		JButton btnLogIn = new JButton("Log In");
 		getContentPane().add(btnLogIn);
-		btnLogIn.setBounds(176, 450, 111, 38);
+		btnLogIn.setBounds(180, 524, 111, 38);
 		
 		//Tao textfield
 		textPass = new JTextField();
-		textPass.setBounds(136, 377, 279, 30);
+		textPass.setBounds(138, 472, 279, 30);
 		getContentPane().add(textPass);
 		textPass.setColumns(10);
 		
 		textUser = new JTextField();
 		textUser.setColumns(10);
-		textUser.setBounds(136, 325, 279, 30);
+		textUser.setBounds(138, 420, 279, 30);
 		getContentPane().add(textUser);
 		
 		//Tao label cho textfield
 		JLabel lblPass = new JLabel("Password:");
 		lblPass.setFont(new Font("Arial", Font.BOLD, 16));
-		lblPass.setBounds(30, 377, 93, 30);
+		lblPass.setBounds(32, 472, 93, 30);
 		getContentPane().add(lblPass);
 		
 		JLabel lblUser = new JLabel("User name:");
 		lblUser.setFont(new Font("Arial", Font.BOLD, 16));
-		lblUser.setBounds(30, 325, 93, 30);
+		lblUser.setBounds(32, 420, 93, 30);
 		getContentPane().add(lblUser);
+		
+		//Tao label chua gif thumbnail
+		JLabel lblThumbnail = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(System.getProperty("user.dir")+ "\\rsc\\Thumbnail.gif")));
+		lblThumbnail.setBounds(32, 24, 400, 350);
+		getContentPane().add(lblThumbnail);
 		
 		//
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(System.getProperty("user.dir")+"\\rsc\\icon.jpg"));

@@ -47,6 +47,9 @@ public class MainGUI extends JFrame {
 		btnExportAll.setBounds(10, 66, 89, 23);
 		getContentPane().add(btnExportAll);
 		
+		//test
+		
+		
 		JButton btnExportPart = new JButton("Find Id");
 		btnExportPart.setBounds(109, 66, 89, 23);
 		getContentPane().add(btnExportPart);

@@ -47,6 +47,7 @@ public class Controller {
 		return data;
 	}
 	
+	//Ham xuat toan bo data
 	public Vector<Vector<String>> getAll() throws ClassNotFoundException, SQLException {
 		Vector<Vector<String>> data = new Vector<>();
 
