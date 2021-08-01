@@ -20,7 +20,6 @@ public class ImportGUI extends JFrame {
 	Controller controller = new Controller();
 	
 	private JTextField textFilePath;
-	private String dir;
 
 	ImportGUI(){
 		//
@@ -63,7 +62,7 @@ public class ImportGUI extends JFrame {
 		btnConfirm.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					controller.Import(dir);
+					controller.Import(textFilePath.getText());
 					JOptionPane.showMessageDialog(ImportGUI.this, "Successful");
 					ImportGUI.this.dispose();
 				} catch(Exception er) {
@@ -80,7 +79,6 @@ public class ImportGUI extends JFrame {
 				FileChooser.setMultiSelectionEnabled(false);
 				FileChooser.showDialog(ImportGUI.this, "Open");
 				
-				dir = FileChooser.getSelectedFile().getAbsolutePath();
 				textFilePath.setText(FileChooser.getSelectedFile().getAbsolutePath());;
 			}
 			
