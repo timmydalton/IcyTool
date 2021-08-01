@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 
 import javax.swing.JTextField;
@@ -36,10 +37,14 @@ public class LogInGUI extends JFrame {
 		this.setSize(480, 640);
 		getContentPane().setLayout(null);
 		
-		//Tao button LogIn
+		//Tao button
 		JButton btnLogIn = new JButton("Log In");
 		getContentPane().add(btnLogIn);
 		btnLogIn.setBounds(180, 524, 111, 40);
+		
+		JButton btnSetting = new JButton("...");
+		btnSetting.setBounds(32, 524, 44, 40);
+		getContentPane().add(btnSetting);
 		
 		//Tao textfield
 		textPass = new JPasswordField();
@@ -68,6 +73,12 @@ public class LogInGUI extends JFrame {
 		lblThumbnail.setBounds(32, 24, 400, 350);
 		getContentPane().add(lblThumbnail);
 		
+		//Lay setting.txt
+		try {
+			DatabaseInfo.getSetting();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 		//
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(System.getProperty("user.dir")+"\\rsc\\icon.jpg"));
 		this.setVisible(true);
@@ -75,6 +86,13 @@ public class LogInGUI extends JFrame {
 		this.setLocationRelativeTo(null);
 		
 		//Xu ly cac event
+		
+		//Event cho button Setting
+		btnSetting.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new SettingGUI();
+			}
+		});
 
 		//Event cho button LogIn
 		btnLogIn.addMouseListener(new MouseAdapter() {
