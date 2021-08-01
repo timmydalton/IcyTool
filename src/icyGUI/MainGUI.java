@@ -25,7 +25,7 @@ public class MainGUI extends JFrame {
 
 	public MainGUI(){
 		// 
-		//Khoi tao UI
+		//Khoi tao UI Main
 		
 		//
 		super("IcyTool");
@@ -44,19 +44,24 @@ public class MainGUI extends JFrame {
 		
 		//Tao button
 		JButton btnExportAll = new JButton("Export");
-		btnExportAll.setBounds(10, 66, 89, 23);
+		btnExportAll.setBounds(10, 59, 90, 30);
 		getContentPane().add(btnExportAll);
-		
-		//test
-		
-		
+			
 		JButton btnExportPart = new JButton("Find Id");
-		btnExportPart.setBounds(109, 66, 89, 23);
+		btnExportPart.setBounds(109, 59, 90, 30);
 		getContentPane().add(btnExportPart);
+		
+		JButton btnDelAll = new JButton("Del Table");
+		btnDelAll.setBounds(664, 18, 90, 30);
+		getContentPane().add(btnDelAll);
+		
+		JButton btnImport = new JButton("Import");
+		btnImport.setBounds(664, 59, 90, 30);
+		getContentPane().add(btnImport);
 		
 		//Tao textfield nhap du lieu
 		JTextField textFwi = new JTextField();
-		textFwi.setBounds(208, 66, 153, 23);
+		textFwi.setBounds(208, 59, 200, 30);
 		getContentPane().add(textFwi);
 		textFwi.setColumns(10);
 		
@@ -79,7 +84,7 @@ public class MainGUI extends JFrame {
 		
 		//Xu ly cac event
 		
-		//Event nut export
+		//Event nut Export
 		btnExportAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -102,6 +107,25 @@ public class MainGUI extends JFrame {
 				} catch(Exception e1) {
 					JOptionPane.showMessageDialog(scrollPane1, "Get data failure\nDetails: " + e1, "Error", JOptionPane.ERROR_MESSAGE);
 				}
+			}
+		});
+		
+		//Event nut DelAll
+		btnDelAll.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				try {
+					controller.DelAll();
+					JOptionPane.showMessageDialog(MainGUI.this, "Delete table successful");
+				} catch(Exception er) {
+					JOptionPane.showMessageDialog(MainGUI.this, "Delete failed, please check your database with a CVEList table");
+				}
+			}
+		});
+		
+		//Event nut Import
+		btnImport.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new ImportGUI();
 			}
 		});
 		

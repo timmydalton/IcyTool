@@ -14,10 +14,12 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.ImageIcon;
 
 public class LogInGUI extends JFrame {
@@ -28,7 +30,7 @@ public class LogInGUI extends JFrame {
 	
 	LogInGUI(){
 		//
-		//Khoi tao UI
+		//Khoi tao UI Log In
 		
 		//
 		super("IcyTool");
@@ -41,7 +43,7 @@ public class LogInGUI extends JFrame {
 		btnLogIn.setBounds(180, 524, 111, 38);
 		
 		//Tao textfield
-		textPass = new JTextField();
+		textPass = new JPasswordField();
 		textPass.setBounds(138, 472, 279, 30);
 		getContentPane().add(textPass);
 		textPass.setColumns(10);

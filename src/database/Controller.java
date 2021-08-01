@@ -12,6 +12,23 @@ public class Controller {
 		return connection;
 	}
 	
+	//Ham Import file input
+	public void Import(String a) throws ClassNotFoundException, SQLException{
+		Connection connection = getConnect();
+		
+		a = "bulk insert CVEList from \'" + a + "\' with(fieldterminator = \',\', rowterminator = \'\\n\', Format = \'CSV\')";
+		Statement stmt = connection.createStatement();
+		stmt.executeUpdate(a);
+	}
+	
+	//Ham del du lieu
+	public void DelAll() throws ClassNotFoundException,SQLException{
+		Connection connection = getConnect();
+		
+		Statement stmt = connection.createStatement();
+		stmt.executeUpdate("Delete from CVEList");
+	}
+	
 	//Tra ve vector chua du lieu
 	public Vector<Vector<String>> getOne(String a) throws ClassNotFoundException, SQLException{
 		Vector<Vector<String>> data = new Vector<>();
@@ -106,4 +123,6 @@ public class Controller {
 		return s;
 		
 	}
+	
+	//
 }
