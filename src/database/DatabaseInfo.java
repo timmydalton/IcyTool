@@ -7,7 +7,7 @@ public class DatabaseInfo {
 	
 	public static String dbUser = "";
 	public static String dbPass = "";
-
+	public static String dbTable = "CVEList";
 }
 
 

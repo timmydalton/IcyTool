@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 
 import javax.swing.JTextField;
@@ -38,7 +39,7 @@ public class LogInGUI extends JFrame {
 		//Tao button LogIn
 		JButton btnLogIn = new JButton("Log In");
 		getContentPane().add(btnLogIn);
-		btnLogIn.setBounds(180, 524, 111, 38);
+		btnLogIn.setBounds(180, 524, 111, 40);
 		
 		//Tao textfield
 		textPass = new JPasswordField();
@@ -74,7 +75,7 @@ public class LogInGUI extends JFrame {
 		this.setLocationRelativeTo(null);
 		
 		//Xu ly cac event
-		
+
 		//Event cho button LogIn
 		btnLogIn.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -120,7 +121,7 @@ public class LogInGUI extends JFrame {
 
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		new LogInGUI();
 	}
 }
