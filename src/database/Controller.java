@@ -16,7 +16,7 @@ public class Controller {
 	public void Import(String a) throws ClassNotFoundException, SQLException{
 		Connection connection = getConnect();
 		
-		a = "bulk insert " + DatabaseInfo.dbTable + " from \'" + a + "\' with(fieldterminator = \',\', rowterminator = \'\\n\', Format = \'CSV\')";
+		a = "bulk insert " + DatabaseInfo.dbTable + " from \'" + a + "\' with ( fieldterminator = \',\', rowterminator = \'0x0a\', datafiletype = \'char\', firstrow = 10)";
 		Statement stmt = connection.createStatement();
 		stmt.executeUpdate(a);
 	}
@@ -35,7 +35,7 @@ public class Controller {
 		
 		Connection connection = getConnect();
 		Statement stmt = connection.createStatement();
-		ResultSet rs = stmt.executeQuery("Select * from " + DatabaseInfo.dbTable + " where Id like \'%-" + a + "%\' order by Id ASC");
+		ResultSet rs = stmt.executeQuery("Select * from " + DatabaseInfo.dbTable + " where Id like \'%" + a + "%\' order by Id ASC");
 		
 		while (rs.next()) {
 		    String Sid = rs.getString(1);

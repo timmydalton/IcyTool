@@ -54,6 +54,7 @@ public class ImportGUI extends JFrame {
 		
 		//
 		this.setVisible(true);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		
 		//Xu ly event

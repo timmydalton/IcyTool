@@ -130,8 +130,10 @@ public class MainGUI extends JFrame {
 		btnExportAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
+					textArea.setText("Loading...");
 					data = controller.getAll();
 					((DefaultTableModel)(table.getModel())).setDataVector(data, header);
+					textArea.setText("Get all data successful!!");
 				} catch(Exception e1) {
 					JOptionPane.showMessageDialog(scrollPane1, "Get data failure\nDetails: " + e1, "Error", JOptionPane.ERROR_MESSAGE);
 				}
@@ -171,24 +173,30 @@ public class MainGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (comboBox.getSelectedItem() == "Year or ID") {
 					try {
+						textArea.setText("Loading...");
 						data = controller.getOne(textField1.getText());
 						((DefaultTableModel)(table.getModel())).setDataVector(data, header);
+						textArea.setText("Successful!!");
 					} catch(Exception e1) {
 						JOptionPane.showMessageDialog(scrollPane1, "Get data failure\nDetails: " + e1, "Error", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 				else if (comboBox.getSelectedItem() == "Year range") {
 					try {
+						textArea.setText("Loading...");
 						data = controller.getYearRange(textField1.getText(), textField2.getText());
 						((DefaultTableModel)(table.getModel())).setDataVector(data, header);
+						textArea.setText("Successful!!");
 					} catch(Exception e1) {
 						JOptionPane.showMessageDialog(scrollPane1, "Get data failure\nDetails: " + e1, "Error", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 				else if (comboBox.getSelectedItem() == "Year and ID") {
 					try {
+						textArea.setText("Loading...");
 						data = controller.getRangeByIdYear(textField1.getText(), textField2.getText(),textField3.getText());
 						((DefaultTableModel)(table.getModel())).setDataVector(data, header);
+						textArea.setText("Successful!!");
 					} catch(Exception e1) {
 						JOptionPane.showMessageDialog(scrollPane1, "Get data failure\nDetails: " + e1, "Error", JOptionPane.ERROR_MESSAGE);
 					}
@@ -200,8 +208,9 @@ public class MainGUI extends JFrame {
 		btnDelAll.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
+					textArea.setText("Loading...");
 					controller.DelAll();
-					JOptionPane.showMessageDialog(MainGUI.this, "Delete table successful");
+					textArea.setText("Deleted all data from table, query executed successful!!");
 				} catch(Exception er) {
 					JOptionPane.showMessageDialog(MainGUI.this, "Delete failed, please check your database with a CVEList table");
 				}
@@ -227,7 +236,7 @@ public class MainGUI extends JFrame {
 		//Event nut ?
 		btnNote.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(MainGUI.this, "Note:\n - Input ID must be typed in full length\n E.g. CVE-1999-0015 have ID number is \"15\"");
+				JOptionPane.showMessageDialog(MainGUI.this, "Note:\n - Input ID must be typed in full length\n E.g. CVE-1999-0015 have ID number is \"0015\"");
 			}
 		});
 
