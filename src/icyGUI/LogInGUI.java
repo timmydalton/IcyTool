@@ -25,7 +25,7 @@ public class LogInGUI extends JFrame {
         //Khoi tao UI Log In
 
         //
-        super("IcyTool");
+        super("Login");
         this.setSize(400, 500);
         getContentPane().setLayout(null);
 
