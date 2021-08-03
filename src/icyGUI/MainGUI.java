@@ -8,7 +8,6 @@ import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 import java.util.Vector;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -150,7 +149,7 @@ public class MainGUI extends JFrame {
         scrollPane2.setViewportView(textArea);
         textArea.setEditable(false);
         textArea.setLineWrap(true);
-
+        textArea.setText("Welcome to IcyTool\nChoose a button above to start...");
 
         //
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(System.getProperty("user.dir")+"\\rsc\\icon.jpg"));

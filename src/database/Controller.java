@@ -161,6 +161,7 @@ public class Controller {
 
             data.add(temp);
         }
+        connection.close();
         return data;
     }
 

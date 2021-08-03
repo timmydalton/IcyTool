@@ -120,9 +120,9 @@ public class LogInGUI extends JFrame {
                 try {
                     DatabaseInfo.dbUser = textUser.getText();
                     DatabaseInfo.dbPass = textPass.getText();
-                    Connection connection = controller.getConnect();
+                    controller.getConnect();
                     JOptionPane.showMessageDialog(LogInGUI.this, "Log in successful");
-                    LogInGUI.this.setVisible(false);
+                    LogInGUI.this.dispose();
                     new MainGUI();
                 } catch (Exception er) {
                     JOptionPane.showMessageDialog(LogInGUI.this, "Log in failed\nCheck your username, password and setting!!!");
@@ -138,7 +138,7 @@ public class LogInGUI extends JFrame {
                     	btnLogIn.doClick();
                         DatabaseInfo.dbUser = textUser.getText();
                         DatabaseInfo.dbPass = textPass.getText();
-                        Connection connection = controller.getConnect();
+                        controller.getConnect();
                         JOptionPane.showMessageDialog(LogInGUI.this, "Log in successful");
                         LogInGUI.this.dispose();
                         new MainGUI();
