@@ -265,7 +265,7 @@ public class MainGUI extends JFrame {
                 else if (comboBox.getSelectedItem() == "Year range") {
                     try {
                         textArea.setText("Loading...");
-                        data = controller.getYearRange(textField1.getText(), textField2.getText());
+                        data = controller.getByYearRange(textField1.getText(), textField2.getText());
                         ((DefaultTableModel)(table.getModel())).setDataVector(data, header);
                         textArea.setText("Successful!!");
                     } catch(Exception e1) {
@@ -275,7 +275,7 @@ public class MainGUI extends JFrame {
                 else if (comboBox.getSelectedItem() == "Year and ID") {
                     try {
                         textArea.setText("Loading...");
-                        data = controller.getRangeByIdYear(textField1.getText(), textField2.getText(),textField3.getText());
+                        data = controller.getByIdYearRange(textField1.getText(), textField2.getText(),textField3.getText());
                         ((DefaultTableModel)(table.getModel())).setDataVector(data, header);
                         textArea.setText("Successful!!");
                     } catch(Exception e1) {
@@ -290,7 +290,7 @@ public class MainGUI extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 try {
                     textArea.setText("Loading...");
-                    controller.DelAll();
+                    controller.delAll();
                     textArea.setText("Deleted all data from table, query executed successful!!");
                 } catch(Exception er) {
                     JOptionPane.showMessageDialog(MainGUI.this, "Delete failed, please check your database");

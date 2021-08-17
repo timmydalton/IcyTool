@@ -9,8 +9,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Connection;
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -118,8 +116,7 @@ public class LogInGUI extends JFrame {
         btnLogIn.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 try {
-                    DatabaseInfo.dbUser = textUser.getText();
-                    DatabaseInfo.dbPass = textPass.getText();
+                    DatabaseInfo.setAccount(textUser.getText(),textPass.getText());
                     controller.getConnect();
                     JOptionPane.showMessageDialog(LogInGUI.this, "Log in successful");
                     LogInGUI.this.dispose();
@@ -136,8 +133,7 @@ public class LogInGUI extends JFrame {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     try {
                     	btnLogIn.doClick();
-                        DatabaseInfo.dbUser = textUser.getText();
-                        DatabaseInfo.dbPass = textPass.getText();
+                    	DatabaseInfo.setAccount(textUser.getText(),textPass.getText());
                         controller.getConnect();
                         JOptionPane.showMessageDialog(LogInGUI.this, "Log in successful");
                         LogInGUI.this.dispose();
