@@ -78,7 +78,7 @@ public class MainGUI extends JFrame {
         btnFind.setContentAreaFilled(false);
         btnFind.setOpaque(false);
         btnFind.setFocusable(false);
-        btnFind.setBounds(265, 59, 32, 32);
+        btnFind.setBounds(265, 59, 30, 30);
         getContentPane().add(btnFind);
 
         JButton btnNote = new JButton("Note", new ImageIcon(System.getProperty("user.dir")+"\\rsc\\note.png"));
